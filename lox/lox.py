@@ -12,6 +12,8 @@ class Lox:
     code = file.read()
     file.close()
     self.run(code)
+    if self.had_error:
+      sys.exit(65)
 
   """
   Implementing the REPL method
@@ -22,6 +24,7 @@ class Lox:
       if user_inp == "<exit REPL>":
         break
       self.run(user_inp)
+      self.had_error = False
     
   """
   Implementing the run method to execute lox code
