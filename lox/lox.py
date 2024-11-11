@@ -32,6 +32,16 @@ class Lox:
     
     for token in tokens:
       print(token)
+      
+  """
+  Implementing error-handling methods
+  """
+  def error(self, line, where='', message=None):
+    self.report(line, where, message)
+  
+  def report(self, line, where, message):
+    print(f'[Line {line}] Error {where}: {message}')
+    self.had_error = True
     
 #--------------------------------------Main-method-----------------------------------------#
 """
