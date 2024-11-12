@@ -21,7 +21,7 @@ class Lox:
   def run_prompt(self):
     while True:
       user_inp = input("> ")
-      if user_inp == "<exit REPL>":
+      if user_inp == ":q":
         break
       self.run(user_inp)
       self.had_error = False
